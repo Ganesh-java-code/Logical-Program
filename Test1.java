@@ -2,7 +2,7 @@ package in.ganesh.test;
 
 public class Test1 {
     public static void main(String[] args) {
-        Object o ="patil";
+        Object o ="1234";
         MethodCall(o);
     }
 

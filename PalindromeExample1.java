@@ -1,6 +1,6 @@
 package in.ganesh.test;
 
-public class Palindrome {
+public class PalindromeExample1 {
     public static void main(String[] args) {
       String name = "madam",rev="";
         String[] split = name.split(" ");

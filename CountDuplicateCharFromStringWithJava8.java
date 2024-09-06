@@ -8,10 +8,17 @@ import java.util.stream.Collectors;
 
 public class CountDuplicateCharFromStringWithJava8 {
     public static void main(String[] args) {
-        List<String> list = Arrays.asList("ganesh ganesh");
-        String s = list.toString();
-        String[] strArr = s.split("");
-        Map<String, Long> map = Arrays.stream(strArr).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        map.forEach((k,v)-> System.out.println(k+" occured "+v));
+        List<String> strings = List.of("hello world");
+
+        // Concatenate all strings into one
+        String concatenatedString = String.join("", strings);
+
+        // Count the occurrence of each character
+        Map<Character, Long> charCountMap = concatenatedString.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        // Print the character counts
+        charCountMap.forEach((character, count) -> System.out.println(character + ": " + count));
     }
 }
